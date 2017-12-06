@@ -1,0 +1,47 @@
+<resources>
+    <string name="app_name">默锐安全管理系统</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="host_string">http://%1$s:%2$s/moris</string>
+    <string name="no_data">empty content</string>
+
+    <string name="developing">工程师正在拼命开发中,\n敬请期待……</string>
+    <string name="loading">加载中…</string>
+    <string name="error">Error</string>
+    <string name="ok">确定</string>
+    <string name="cancel">取消</string>
+    <string name="tag_tips">请将设备贴近TAG点以感应监测点</string>
+    <string name="nfc_notsupport">设备不支持NFC! 或者NFC故障.请重试或者检查</string>
+    <string name="nfc_disabled">NFC未启用! 请去无线设置来启用它</string>
+    <string name="nfc_init_ok">识别中…</string>
+    <string name="login_account_hint">请输入账号</string>
+    <string name="login_password_hint">请输入密码</string>
+    <string name="copyright">Copyright © 2012 山东默锐科技有限公司</string>
+    <string name="title_notice">通知公告</string>
+    <string name="title_contacts">通讯录</string>
+    <string name="title_contplay">应急预案</string>
+    <string name="title_filepreview">文件预览</string>
+    <string name="title_filedoc">文件文档</string>
+    <string name="title_guide">操作指南</string>
+    <string name="title_hisrecord">历史记录</string>
+    <string name="title_inspectrec">巡检记录</string>
+    <string name="title_report_action">行为报表</string>
+    <string name="title_report_result">结果报表</string>
+    <string name="title_sceneplay">现场处置方案</string>
+    <string name="title_scenevideo">现场视频</string>
+    <string name="title_statisreport">统计报表</string>
+    <string name="title_synctask">同步任务</string>
+    <string name="title_task_alloct">任务分配</string>
+    <string name="title_task_detail">任务详情</string>
+    <string name="title_task_inspect">巡检任务</string>
+    <string name="title_tag">感应TAG点</string>
+    <string name="title_main">默锐安全管理系统</string>
+    <string name="empty_data">暂无数据</string>
+    <string name="title_detail">详情</string>
+    <string name="mobile">手机号</string>
+    <string name="password_text">密码</string>
+    <string name="login_text">登录</string>
+    <string name="forget_pwd">忘记密码?</string>
+    <string name="task_insdetail">巡检任务详情</string>
+</resources>

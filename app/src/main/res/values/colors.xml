@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#0065b3</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="ripple_bg">?android:attr/selectableItemBackground</color>
+    <color name="theme">@color/colorPrimary</color>
+    <color name="tools_color">#DCDCDC</color>
+    <color name="divider_color">#DCDCDC</color>
+    <color name="background_item">#ffffff</color>
+    <color name="error_color">#fa364e</color>
+    <color name="stow_color">#fa364e</color>
+    <color name="hint_highlight">#b303a9f4</color>
+    <color name="disable_color">@color/tools_color</color>
+    <color name="background_light">#ffffffff</color>
+    <color name="deep_sky_blue">#03A9F4</color>
+    <color name="indigo">#5162b7</color>
+
+    <color name="scrim">#99323232</color>
+    <color name="mid_grey">#40808080</color>
+
+    <!--bg_search-->
+    <color name="spectrum_cyan">#00e0e0</color>
+    <color name="spectrum_yellow">#f0e000</color>
+    <color name="shadow">#25808080</color>
+    <color name="google_blue">#4285F4</color>
+    <color name="google_red">#EA4335</color>
+    <color name="google_green">#34A853</color>
+    <color name="google_yellow">#FBBC05</color>
+    <color name="checking">#6cc955</color>
+    <color name="nocheck">#ff8f44</color>
+    <color name="white">#ffffff</color>
+    <color name="black">#000000</color>
+    <color name="transparent">#00000000</color>
+    <color name="transo">#0f000000</color>
+    <color name="text_dark">#a6a6a6</color>
+    <color name="default_color">#f7f7f7</color>
+    <color name="edit_text">@color/black</color>
+    <color name="edit_hint_text">#ffacacac</color>
+    <color name="grid_itemdecoration">#267cbe</color>
+    <color name="light_gray">#e6e6e6</color>
+    <color name="light_gray2">#fafafa</color>
+    <color name="colorColumn">#346cf1</color>
+    <color name="colorRow">#f9ba1d</color>
+    <color name="lv_multichoice_bg">#e4dac1</color>
+    <color name="colorSelected">#e9c364</color>
+    <color name="colorDeselected">#fdfdfd</color>
+    <color name="table_head">#E5EFFE</color>
+    <color name="beijin">#2c8fd3</color>
+    <color name="border_color">#817F80</color>
+</resources>
