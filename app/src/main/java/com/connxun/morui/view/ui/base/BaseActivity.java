@@ -60,7 +60,7 @@ public abstract class BaseActivity<VB extends ViewDataBinding> extends RxAppComp
         return mBinding;
     }
 
-    public Context getmContext() {
+    public Context getContext() {
         return mContext;
     }
 
