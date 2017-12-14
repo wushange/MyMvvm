@@ -3,7 +3,8 @@ package com.connxun.morui.di.component;
 import com.connxun.morui.MyApplication;
 import com.connxun.morui.di.module.ActivityModule;
 import com.connxun.morui.di.module.ApiModule;
-import com.connxun.morui.di.module.AppModule;
+import com.connxun.morui.di.module.ApplicationModule;
+import com.connxun.morui.di.module.DbModule;
 
 import javax.inject.Singleton;
 
@@ -15,8 +16,8 @@ import dagger.Component;
  */
 
 @Singleton
-@Component(modules = {AppModule.class, ApiModule.class})
-public interface AppComponent {
+@Component(modules = {ApplicationModule.class, ApiModule.class, DbModule.class})
+public interface ApplicationComponent {
 
     void inject(MyApplication myApplication);
 

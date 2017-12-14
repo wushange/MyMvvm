@@ -1,4 +1,4 @@
-package com.connxun.morui.model.remote.help;
+package com.connxun.morui.lib.network;
 
 import com.connxun.morui.model.remote.exception.ApiException;
 
@@ -17,6 +17,7 @@ public interface RequestHandler {
 
     /**
      * 请求头处理
+     *
      * @param request
      * @param chain
      * @return
@@ -25,11 +26,12 @@ public interface RequestHandler {
 
     /**
      * 响应处理
+     *
      * @param response
      * @param chain
      * @return
      * @throws IOException
      * @throws ApiException
      */
-    Response onAfterRequest(Response response, Interceptor.Chain chain) throws Exception ;
+    Response onAfterRequest(Response response, Interceptor.Chain chain) throws IOException;
 }

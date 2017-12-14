@@ -1,13 +1,11 @@
 package com.connxun.morui.viewmodel;
 
 import android.databinding.Bindable;
-import android.view.View;
 
 import com.connxun.morui.BR;
 import com.connxun.morui.model.entity.User;
 import com.connxun.morui.model.repository.UserRepository;
 import com.connxun.morui.viewmodel.helper.BaseViewModel;
-import com.orhanobut.logger.Logger;
 
 import javax.inject.Inject;
 
@@ -21,9 +19,10 @@ import io.reactivex.schedulers.Schedulers;
  */
 
 public class LoginViewModel extends BaseViewModel {
-    UserRepository userRepository;
-    private String userName;
-    private String userPassWord;
+    private UserRepository userRepository;
+    private String         userName;
+    private String         userPassWord;
+
 
     @Inject
     public LoginViewModel(UserRepository userRepository) {
@@ -50,16 +49,11 @@ public class LoginViewModel extends BaseViewModel {
         notifyPropertyChanged(BR.userPassWord);
     }
 
-    public void loginTest(View view) {
-        Logger.e("界面上点击了登录" + userName);
-        setUserName("哈哈哈变了把蒙蔽了把");
-        userRepository.login(userName, userPassWord).subscribeOn(Schedulers.io())
-                .observeOn(AndroidSchedulers.mainThread());
-
-    }
 
     public Single<User> login() {
-        return userRepository.login(userName, userPassWord).subscribeOn(Schedulers.io())
+        return userRepository.login(userName, userPassWord)
+                .subscribeOn(Schedulers.io())
+                .doOnSuccess(user -> userRepository.insertUser(user))
                 .observeOn(AndroidSchedulers.mainThread());
 
     }

@@ -1,6 +1,7 @@
 package com.connxun.morui.model.repository;
 
 import com.connxun.morui.model.entity.User;
+import com.connxun.morui.model.local.dao.UserDao;
 import com.connxun.morui.model.remote.api.UserService;
 
 import javax.inject.Inject;
@@ -14,14 +15,21 @@ import io.reactivex.Single;
 
 public class UserRepository {
 
-    UserService service;
+    private UserService userService;
+    private UserDao     userDao;
+
 
     @Inject
-    public UserRepository(UserService service) {
-        this.service = service;
+    public UserRepository(UserService userService, UserDao userDao) {
+        this.userService = userService;
+        this.userDao = userDao;
     }
 
-    public  Single<User> login(String userName, String pwd) {
-        return service.login(userName, pwd);
+    public Single<User> login(String userName, String pwd) {
+        return userService.login(userName, pwd);
+    }
+
+    public void insertUser(User user) {
+        userDao.insertUser(user);
     }
 }

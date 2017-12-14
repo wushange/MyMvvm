@@ -17,4 +17,8 @@ public class Constants {
      */
     public static String HOST         = "http://" + SERVER_IP + ":" + SERVER_PORT + "/moris/";
 
+
+
+    public static final String LOGIN_ACT_PATH = "/user/login";
+
 }

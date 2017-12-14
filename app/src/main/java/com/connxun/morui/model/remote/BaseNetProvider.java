@@ -1,12 +1,15 @@
-package com.connxun.morui.model.remote.help;
+package com.connxun.morui.model.remote;
 
 import android.content.Context;
 
 import com.connxun.morui.BuildConfig;
+import com.connxun.morui.lib.network.NetProvider;
+import com.connxun.morui.lib.network.RequestHandler;
 import com.franmontiel.persistentcookiejar.PersistentCookieJar;
 import com.franmontiel.persistentcookiejar.cache.SetCookieCache;
 import com.franmontiel.persistentcookiejar.persistence.SharedPrefsCookiePersistor;
 
+import java.io.IOException;
 import java.util.UUID;
 
 import okhttp3.CookieJar;
@@ -84,7 +87,7 @@ public class BaseNetProvider implements NetProvider {
         }
 
         @Override
-        public Response onAfterRequest(Response response, Interceptor.Chain chain) throws Exception {
+        public Response onAfterRequest(Response response, Interceptor.Chain chain) throws IOException {
             return response;
         }
     }

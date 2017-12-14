@@ -1,6 +1,7 @@
 apply plugin: 'com.android.application'
 android {
     compileSdkVersion 26
+    buildToolsVersion '26.0.2'
     defaultConfig {
         applicationId "com.connxun.morui"
         minSdkVersion 21
@@ -8,6 +9,14 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [
+                                moduleName: project.getName(),
+                                "room.schemaLocation":"$projectDir/schemas".toString()
+                            ]
+            }
+        }
     }
     buildTypes {
         release {
@@ -19,9 +28,10 @@ android {
         enabled = true
     }
     compileOptions {
-        targetCompatibility 1.8
-        sourceCompatibility 1.8
+        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_1_8
     }
+
 }
 
 dependencies {
@@ -55,7 +65,8 @@ dependencies {
     compile 'com.squareup.retrofit2:converter-gson:2.3.0'
     compile 'com.squareup.retrofit2:adapter-rxjava2:2.3.0'
     compile 'com.squareup.okhttp3:logging-interceptor:3.9.0'
-    compile 'com.google.code.gson:gson:2.8.0'
+    compile 'com.google.code.gson:gso' +
+            'n:2.8.1'
     //image
     compile 'com.github.bumptech.glide:glide:4.1.1'
     //dagger2
@@ -72,6 +83,10 @@ dependencies {
     //aspectj
     compile 'org.aspectj:aspectjrt:1.8.9'
     compile 'com.github.franmontiel:PersistentCookieJar:v1.0.1'
+    compile 'com.alibaba:arouter-api:1.2.4'
+    annotationProcessor 'com.alibaba:arouter-compiler:1.1.4'
+    compile 'com.qmuiteam:qmui:1.0.4'
+
 }
 repositories {
     mavenCentral()

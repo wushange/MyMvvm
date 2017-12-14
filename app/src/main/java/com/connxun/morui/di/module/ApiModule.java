@@ -8,6 +8,9 @@ import dagger.Module;
 import dagger.Provides;
 import retrofit2.Retrofit;
 
+/**
+ * @author wushange
+ */
 @Module
 public class ApiModule {
     @Singleton

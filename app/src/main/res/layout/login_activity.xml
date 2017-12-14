@@ -94,16 +94,18 @@
                         tools:ignore="InvalidImeActionId" />
                 </android.support.design.widget.TextInputLayout>
 
-                <Button
+                <com.qmuiteam.qmui.widget.roundwidget.QMUIRoundButton
                     android:id="@+id/login_btn"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="45dp"
                     android:layout_marginBottom="10dp"
                     android:layout_marginTop="21dp"
-                    android:background="@drawable/radios_bg_login_btn"
-                    android:onClick="@{(v)->presenter.onClick(v)}"
+                    android:clickable="true"
+                    android:gravity="center"
                     android:text="@string/login_text"
-                    android:textColor="#ffffff" />
+                    android:textColor="#ffffff"
+                    app:qmui_backgroundColor="@color/colorPrimary"
+                    app:qmui_radius="10dp" />
 
                 <Space
                     android:layout_width="match_parent"

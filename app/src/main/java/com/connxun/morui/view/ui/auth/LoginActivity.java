@@ -5,6 +5,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.LinearInterpolator;
 
+import com.alibaba.android.arouter.facade.annotation.Route;
+import com.connxun.morui.Constants;
 import com.connxun.morui.R;
 import com.connxun.morui.databinding.LoginActivityBinding;
 import com.connxun.morui.view.helper.util.RxAnimationTool;
@@ -19,15 +21,13 @@ import javax.inject.Inject;
  * @date 2017/12/6
  */
 
+@Route(path = Constants.LOGIN_ACT_PATH)
 public class LoginActivity extends BaseActivity {
 
     @Inject
     LoginViewModel loginViewModel;
     LoginActivityBinding binding;
-    //软件盘弹起后所占高度
-    private int keyHeight    = 0;
-    //屏幕高度
-    private int screenHeight = 0;
+    private int keyHeight = 0;
 
     @Override
     public void loadData() {
@@ -38,17 +38,24 @@ public class LoginActivity extends BaseActivity {
         setTouchDissIm(true);
         setCanScreenshot(false);
         binding = (LoginActivityBinding) getmBinding();
-        binding.setPresenter(this);
         binding.setVm(loginViewModel);
-        //获取屏幕高度
-        screenHeight = this.getResources().getDisplayMetrics().heightPixels;
-        //弹起高度为屏幕高度的1/3
+        loginViewModel.setUserName("15095252686");
+        loginViewModel.setUserPassWord("123456");
+        int screenHeight = this.getResources().getDisplayMetrics().heightPixels;
         keyHeight = screenHeight / 3;
-        /**
-         * 禁止键盘弹起的时候可以滚动
-         */
         binding.scrollView.setOnTouchListener((v, event) -> true);
         binding.scrollView.addOnLayoutChangeListener(onLayoutChangeListener);
+        binding.loginBtn.setOnClickListener(view -> loginViewModel.login().compose(bindToLifecycle())
+                .subscribe(user -> {
+                            showToast("登录成功！");
+                            Logger.e("--user-->>" + user.toString());
+                        },
+                        throwable -> {
+                            showToast("登录失败！");
+                            Logger.e(throwable.getMessage());
+                        }));
+
+
     }
 
     @Override
@@ -61,19 +68,6 @@ public class LoginActivity extends BaseActivity {
         getComponent().inject(this);
     }
 
-    @Override
-    public void onClick(View var1) {
-        switch (var1.getId()) {
-            case R.id.login_btn:
-                loginViewModel.login().compose(this.bindToLifecycle())
-                        .subscribe(user -> Logger.e("--user-->>" + user.toString()),
-                                throwable -> Logger.e(throwable.getMessage()));
-
-                break;
-            default:
-        }
-
-    }
 
     View.OnLayoutChangeListener onLayoutChangeListener = new ViewGroup.OnLayoutChangeListener() {
         @Override

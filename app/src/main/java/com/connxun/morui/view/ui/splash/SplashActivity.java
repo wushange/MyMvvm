@@ -1,9 +1,8 @@
 package com.connxun.morui.view.ui.splash;
 
-import android.view.View;
-
+import com.alibaba.android.arouter.launcher.ARouter;
+import com.connxun.morui.Constants;
 import com.connxun.morui.R;
-import com.connxun.morui.view.ui.auth.LoginActivity;
 import com.connxun.morui.view.ui.base.BaseActivity;
 
 import java.util.concurrent.TimeUnit;
@@ -29,7 +28,8 @@ public class SplashActivity extends BaseActivity {
         Observable.timer(2, TimeUnit.SECONDS).subscribe(new Consumer<Long>() {
             @Override
             public void accept(Long aLong) throws Exception {
-                forward(LoginActivity.class);
+//                forward(LoginActivity.class);
+                ARouter.getInstance().build(Constants.LOGIN_ACT_PATH).navigation();
             }
         });
 
@@ -45,8 +45,4 @@ public class SplashActivity extends BaseActivity {
         getComponent().inject(this);
     }
 
-    @Override
-    public void onClick(View var1) {
-
-    }
 }

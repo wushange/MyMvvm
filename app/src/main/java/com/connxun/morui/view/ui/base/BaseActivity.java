@@ -18,7 +18,6 @@ import android.widget.EditText;
 import com.connxun.morui.MyApplication;
 import com.connxun.morui.di.component.ActivityComponent;
 import com.connxun.morui.di.module.ActivityModule;
-import com.connxun.morui.view.helper.presenter.Presenter;
 import com.connxun.morui.view.helper.util.ToastUtils;
 import com.connxun.morui.view.helper.util.Utils;
 import com.trello.rxlifecycle2.components.support.RxAppCompatActivity;
@@ -28,7 +27,7 @@ import com.trello.rxlifecycle2.components.support.RxAppCompatActivity;
  * @date 2017/12/4
  */
 
-public abstract class BaseActivity<VB extends ViewDataBinding> extends RxAppCompatActivity implements Presenter {
+public abstract class BaseActivity<VB extends ViewDataBinding> extends RxAppCompatActivity  {
 
     protected VB                mBinding;
     protected Context           mContext;
@@ -61,7 +60,11 @@ public abstract class BaseActivity<VB extends ViewDataBinding> extends RxAppComp
     }
 
     public Context getContext() {
-        return mContext;
+        if (mContext != null) {
+            return mContext;
+        } else {
+            return this;
+        }
     }
 
     public abstract Integer getLayoutId();

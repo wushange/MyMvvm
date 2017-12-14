@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.connxun.morui.model.remote.help;
+package com.connxun.morui.lib.network;
 
 import com.google.gson.Gson;
 import com.google.gson.TypeAdapter;

@@ -1,4 +1,4 @@
-package com.connxun.morui.model.remote.help;
+package com.connxun.morui.lib.network;
 
 import java.io.IOException;
 
@@ -21,15 +21,11 @@ public class NetInterceptor implements Interceptor {
     public Response intercept(Chain chain) throws IOException {
         Request request = chain.request();
         if (requestHandler != null) {
-            requestHandler.onBeforeRequest(request, chain);
+            request = requestHandler.onBeforeRequest(request, chain);
         }
         Response response = chain.proceed(request);
         if (requestHandler != null) {
-            try {
-                requestHandler.onAfterRequest(response, chain);
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
+            response = requestHandler.onAfterRequest(response, chain);
         }
         return response;
     }

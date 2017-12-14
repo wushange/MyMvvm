@@ -1,4 +1,4 @@
-package com.connxun.morui.model.remote.help;
+package com.connxun.morui.lib.network;
 
 import okhttp3.CookieJar;
 import okhttp3.Interceptor;

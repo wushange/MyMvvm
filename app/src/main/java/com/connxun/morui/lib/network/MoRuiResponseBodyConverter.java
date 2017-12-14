@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.connxun.morui.model.remote.help;
+package com.connxun.morui.lib.network;
 
 import android.support.annotation.NonNull;
 import android.util.Log;

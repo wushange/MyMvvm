@@ -18,7 +18,9 @@ public class CloseUtils {
      * @param closeables closeable
      */
     public static void closeIO(Closeable... closeables) {
-        if (closeables == null) return;
+        if (closeables == null) {
+            return;
+        }
         for (Closeable closeable : closeables) {
             if (closeable != null) {
                 try {
@@ -36,7 +38,9 @@ public class CloseUtils {
      * @param closeables closeable
      */
     public static void closeIOQuietly(Closeable... closeables) {
-        if (closeables == null) return;
+        if (closeables == null) {
+            return;
+        }
         for (Closeable closeable : closeables) {
             if (closeable != null) {
                 try {
